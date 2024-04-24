@@ -5,8 +5,8 @@ convert = require("color-convert")
 # The smaller the return value, the more similar the colors--2.6 is the minimum
 # perceptable difference.
 colorDifference = (firstColor, secondColor) ->
-  firstColorLabComponents = convert.rgb.lab.raw(firstColor.rgbArray())
-  secondColorLabComponents = convert.rgb.lab.raw(secondColor.rgbArray())
+  firstColorLabComponents = convert.rgb.lab.raw(firstColor.rgb().array())
+  secondColorLabComponents = convert.rgb.lab.raw(secondColor.rgb().array())
 
   sumOfDifferencesSqaured = firstColorLabComponents.map (value, index) ->
     value - secondColorLabComponents[index]

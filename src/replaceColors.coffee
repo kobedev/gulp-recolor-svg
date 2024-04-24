@@ -37,7 +37,7 @@ module.exports = (stringData, matchers, destColors) ->
 
     for matcher, index in matchers
       if matcher(color)
-        outputColor = destColors[index].hexString()
+        outputColor = (destColors[index]).hex()
 
     return outputColor
 
@@ -71,3 +71,4 @@ module.exports = (stringData, matchers, destColors) ->
       element.attr(propertyToReplace, getNewColor(element.attr(propertyToReplace)))
 
   return $.xml()
+
